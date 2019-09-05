@@ -41,7 +41,7 @@ const renderTable = (data) => {
       <td>{moneyFormatHelper(Math.round(item.days30))}</td>
       <td><a href={`https://youtube.com/channel/${item.channel_id}`}>{item.channel_id}</a></td>
       <td>{item.channel_title}</td>
-      <td>{item.emails ? item.emails.toString() : '-'}</td>
+      <td>{item.emails ? item.emails.toString().replace(/,/g, ', ') : '-'}</td>
     </tr>
   );
 

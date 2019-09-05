@@ -10365,7 +10365,7 @@ var renderTable = function renderTable(data) {
       key: idx
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.percent), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.test_users), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, renderLangs(item.languages)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.country_code2), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["moneyFormatHelper"])(item.monthly_views)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["moneyFormatHelper"])(item.subscriber_count)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["moneyFormatHelper"])(Math.round(item.days30))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
       href: "https://youtube.com/channel/".concat(item.channel_id)
-    }, item.channel_id)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.channel_title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.emails ? item.emails.toString() : '-'));
+    }, item.channel_id)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.channel_title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.emails ? item.emails.toString().replace(/,/g, ', ') : '-'));
   });
 };
 

@@ -7052,5 +7052,8 @@ body {
 .table-title {
   margin-top: 20px; }
 
+thead td {
+  background: #f1f1f1; }
+
 
 /*# sourceMappingURL=app.css.map*/
