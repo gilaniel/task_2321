@@ -7040,5 +7040,17 @@ body {
 .card {
   margin-bottom: 20px; }
 
+.table-item {
+  display: inline-block;
+  margin-right: 15px; }
+
+.table-block {
+  max-height: 400px;
+  overflow-y: auto;
+  margin: 20px 35px 50px 15px; }
+
+.table-title {
+  margin-top: 20px; }
+
 
 /*# sourceMappingURL=app.css.map*/

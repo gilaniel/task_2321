@@ -1,45 +1,24 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom';
-import axios from 'axios';
+import Similar from './components/similar';
+import Summary from './components/summary';
+import Matching from './components/matching';
+import {fetchSimilar, fetchSummary, fetchMatching} from './services';
 import './sass/index.sass';
 
 class App extends Component {
     state = {
-        channels: []
+      channels: [],
+      summary: {},
+      matching: [],
+      matching_views: [],
+      matching_subs: [],
+      matching_30: [],
+      searchClicked: false
     }
 
     componentDidMount() {
      
-    }
-
-    renderLanguage = (lang) => {
-      for (let i in lang) {
-        return i;
-      }
-    }
-
-    renderList = (data) => {
-      return data.map((item) =>
-        <div className="col-4" key={item.cid}>
-          <div className="card">
-            <div className="card-body">
-              <h5 className="card-title"><a href="https://youtube.com/channel/{item.channel_title}">{item.channel_title}</a></h5>
-            </div>
-            <ul className="list-group list-group-flush">
-              <li className="list-group-item">Subscribers: {item.subscriber_count}</li>
-              {item.emails
-                ? <li className="list-group-item">Email: {item.emails[0]}</li>
-                : ''
-              }
-              {item.languages
-                ? <li className="list-group-item">Language: {this.renderLanguage(item.languages[0])}</li> 
-                : ''
-              }
-              <li className="list-group-item">Percent: {item.percent}%</li>
-            </ul>
-          </div>
-        </div>
-      ) 
     }
 
     render() {
@@ -53,9 +32,14 @@ class App extends Component {
                 </div>
               </div>
               <div className="row justify-content-center list-block">
-                  {this.state.channels ? this.state.isFetching ? <LoadingBlock/> : this.renderList(this.state.channels) : <EmptyBlock/>}
+                <Summary data={this.state.summary} isFetching={this.state.isFetching} isFetched={this.state.isFetched}/>
               </div>
             </div>
+            <Similar data={this.state.channels} isFetching={this.state.isFetching} isFetched={this.state.isFetched}/>
+            <Matching data={this.state.matching} isFetching={this.state.isFetching} isFetched={this.state.isFetched}/>
+            <Matching data={this.state.matching_views} isFetching={this.state.isFetching} isFetched={this.state.isFetched} metric="monthly_views"/>
+            <Matching data={this.state.matching_subs} isFetching={this.state.isFetching} isFetched={this.state.isFetched} metric="subscriber_count"/>
+            <Matching data={this.state.matching_30} isFetching={this.state.isFetching} isFetched={this.state.isFetched} metric="30days_tip_views"/>
         </div>
       )
     }
@@ -66,24 +50,40 @@ class App extends Component {
       this.setState({
         channelId: channelId
       });
-
-      console.log(this.state.channelId);
     }
 
     handleButtonClick = () => {
       this.setState({
+        searchClicked: true,
         isFetching: true
       });
 
-      axios.get(`http://172.16.1.164:5001/api/similar_channel?channel_id=${this.state.channelId}`)
-      .then((response) => {
+      const data = {channel_id: this.state.channelId};
+
+      Promise.all([
+        fetchSimilar(data),
+        fetchSummary(data),
+        fetchMatching(data),
+        fetchMatching({...data, ...{ matching_type: 'monthly_views' }}),
+        fetchMatching({...data, ...{ matching_type: 'subscriber_count' }}),
+        fetchMatching({...data, ...{ matching_type: '30days_tip_views' }})
+      ])
+      .then(([channels, summary, matching, matching_views, matching_subs, matching_30]) => {
         this.setState({
-          channels: response.data,
-          isFetching: false
-        })
+          channels: channels.data,
+          summary: summary.data,
+          matching: matching.data,
+          matching_views: matching_views.data,
+          matching_subs: matching_subs.data,
+          matching_30: matching_30.data,
+          isFetching: false,
+          isFetched: true
+        });
       })
       .catch((error) => {
-        alert('error');
+        this.setState({
+          isFetching: false
+        })
       });
     }
 }
@@ -92,20 +92,8 @@ class EmptyBlock extends Component {
   render() {
       return (
         <div>
-          no data
+          {/* no data */}
         </div>
-      )
-  }
-}
-
-class LoadingBlock extends Component {
-  render() {
-      return (
-        <div className="col text-center">
-            <div className="spinner-border" role="status">
-              <span className="sr-only">Loading...</span>
-            </div>
-          </div>
       )
   }
 }
