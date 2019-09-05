@@ -37,9 +37,9 @@ class App extends Component {
             </div>
             <Similar data={this.state.channels} isFetching={this.state.isFetching} isFetched={this.state.isFetched}/>
             <Matching data={this.state.matching} isFetching={this.state.isFetching} isFetched={this.state.isFetched}/>
-            <Matching data={this.state.matching_views} isFetching={this.state.isFetching} isFetched={this.state.isFetched} metric="monthly_views"/>
-            <Matching data={this.state.matching_subs} isFetching={this.state.isFetching} isFetched={this.state.isFetched} metric="subscriber_count"/>
-            <Matching data={this.state.matching_30} isFetching={this.state.isFetching} isFetched={this.state.isFetched} metric="30days_tip_views"/>
+            <Matching data={this.state.matching_views} isFetching={this.state.isFetching} isFetched={this.state.isFetched} metric="(соразмерность по monthly_views)"/>
+            <Matching data={this.state.matching_subs} isFetching={this.state.isFetching} isFetched={this.state.isFetched} metric="(соразмерность по subscribers)"/>
+            <Matching data={this.state.matching_30} isFetching={this.state.isFetching} isFetched={this.state.isFetched} metric="(соразмерность по типовым просмотрам на одно видео за 30 дней)"/>
         </div>
       )
     }

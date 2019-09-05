@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import Loading from './loading';
+import { moneyFormatHelper } from '../helpers';
 
 class Similar extends Component {
 
@@ -35,8 +36,8 @@ const renderTable = (data) => {
       <td>{item.test_users}</td>
       <td>{renderLangs(item.languages)}</td>
       <td>{item.country_code2}</td>
-      <td>{item.subscriber_count}</td>
-      <td>{Math.round(item.days30)}</td>
+      <td>{moneyFormatHelper(item.subscriber_count)}</td>
+      <td>{moneyFormatHelper(Math.round(item.days30))}</td>
       <td><a href={`https://youtube.com/channel/${item.channel_id}`}>{item.channel_id}</a></td>
       <td>{item.channel_title}</td>
       <td>{item.emails ? item.emails.toString() : '-'}</td>

@@ -10286,6 +10286,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _loading__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./loading */ "./src/components/loading.js");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../helpers */ "./src/helpers/index.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -10305,6 +10306,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -10361,7 +10363,7 @@ var renderTable = function renderTable(data) {
   return data.map(function (item, idx) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
       key: idx
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.percent), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.test_users), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, renderLangs(item.languages)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.country_code2), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.monthly_views), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.subscriber_count), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, Math.round(item.days30)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.percent), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.test_users), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, renderLangs(item.languages)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.country_code2), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["moneyFormatHelper"])(item.monthly_views)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["moneyFormatHelper"])(item.subscriber_count)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["moneyFormatHelper"])(Math.round(item.days30))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
       href: "https://youtube.com/channel/".concat(item.channel_id)
     }, item.channel_id)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.channel_title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.emails ? item.emails.toString() : '-'));
   });
@@ -10392,6 +10394,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _loading__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./loading */ "./src/components/loading.js");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../helpers */ "./src/helpers/index.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -10411,6 +10414,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -10467,7 +10471,7 @@ var renderTable = function renderTable(data) {
   return data.map(function (item, idx) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
       key: idx
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.percent), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.test_users), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, renderLangs(item.languages)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.country_code2), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.subscriber_count), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, Math.round(item.days30)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.percent), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.test_users), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, renderLangs(item.languages)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.country_code2), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["moneyFormatHelper"])(item.subscriber_count)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["moneyFormatHelper"])(Math.round(item.days30))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
       href: "https://youtube.com/channel/".concat(item.channel_id)
     }, item.channel_id)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.channel_title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.emails ? item.emails.toString() : '-'));
   });
@@ -10569,6 +10573,32 @@ var Table = function Table(data) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Summary);
+
+/***/ }),
+
+/***/ "./src/helpers/index.js":
+/*!******************************!*\
+  !*** ./src/helpers/index.js ***!
+  \******************************/
+/*! exports provided: moneyFormatHelper */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "moneyFormatHelper", function() { return moneyFormatHelper; });
+function moneyFormatHelper(val, wt) {
+  if (!val) return;
+
+  if (wt) {
+    val = val / 60;
+  }
+
+  if ((val ^ 0) !== Number(val)) {
+    val = Number(val).toFixed(0);
+  }
+
+  return String(val).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1,');
+}
 
 /***/ }),
 
@@ -10752,17 +10782,17 @@ function (_Component) {
         data: this.state.matching_views,
         isFetching: this.state.isFetching,
         isFetched: this.state.isFetched,
-        metric: "monthly_views"
+        metric: "(\u0441\u043E\u0440\u0430\u0437\u043C\u0435\u0440\u043D\u043E\u0441\u0442\u044C \u043F\u043E monthly_views)"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_matching__WEBPACK_IMPORTED_MODULE_4__["default"], {
         data: this.state.matching_subs,
         isFetching: this.state.isFetching,
         isFetched: this.state.isFetched,
-        metric: "subscriber_count"
+        metric: "(\u0441\u043E\u0440\u0430\u0437\u043C\u0435\u0440\u043D\u043E\u0441\u0442\u044C \u043F\u043E subscribers)"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_matching__WEBPACK_IMPORTED_MODULE_4__["default"], {
         data: this.state.matching_30,
         isFetching: this.state.isFetching,
         isFetched: this.state.isFetched,
-        metric: "30days_tip_views"
+        metric: "(\u0441\u043E\u0440\u0430\u0437\u043C\u0435\u0440\u043D\u043E\u0441\u0442\u044C \u043F\u043E \u0442\u0438\u043F\u043E\u0432\u044B\u043C \u043F\u0440\u043E\u0441\u043C\u043E\u0442\u0440\u0430\u043C \u043D\u0430 \u043E\u0434\u043D\u043E \u0432\u0438\u0434\u0435\u043E \u0437\u0430 30 \u0434\u043D\u0435\u0439)"
       }));
     }
   }]);
